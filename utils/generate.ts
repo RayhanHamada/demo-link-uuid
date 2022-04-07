@@ -1,3 +1,5 @@
+import { performance } from 'perf_hooks';
+
 export function generate(uuidFn: () => string) {
   const startMs = performance.now();
   const value = uuidFn();
