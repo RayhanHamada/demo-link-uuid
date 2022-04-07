@@ -1,11 +1,12 @@
-export async function generate(uuidFn: () => string) {
-  const start = performance.now();
+export function generate(uuidFn: () => string) {
+  const startMs = performance.now();
   const value = uuidFn();
-  const end = performance.now();
+  const endMs = performance.now();
 
   return {
-    start,
-    end,
+    start: startMs,
+    end: endMs,
     value,
+    takenMs: endMs - startMs,
   };
 }
