@@ -6,8 +6,8 @@ export function generate(uuidFn: () => string) {
   const endMs = performance.now();
 
   return {
-    start: startMs,
-    end: endMs,
+    startMs,
+    endMs,
     value,
     takenMs: endMs - startMs,
   };
